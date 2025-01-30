@@ -4,22 +4,22 @@ import java.util.List;
 
 public class Lion {
 
-    boolean hasMane;
+    private boolean hasMane;
+    private final Feline feline; // Используем переданный объект
 
-<span class="fc" id="L9">    public Lion(String sex, Feline feline) throws Exception {</span>
-<span class="fc bfc" id="L10" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
-<span class="fc" id="L11">            hasMane = true;</span>
-<span class="fc bfc" id="L12" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
-<span class="fc" id="L13">            hasMane = false;</span>
+<span class="fc" id="L10">    public Lion(String sex, Feline feline) throws Exception {</span>
+<span class="fc bfc" id="L11" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
+<span class="fc" id="L12">            hasMane = true;</span>
+<span class="fc bfc" id="L13" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
+<span class="fc" id="L14">            hasMane = false;</span>
         } else {
-<span class="fc" id="L15">            throw new Exception(&quot;Используйте допустимые значения пола животного - самей или самка&quot;);</span>
+<span class="fc" id="L16">            throw new Exception(&quot;Используйте допустимые значения пола животного - Самец или Самка&quot;);</span>
         }
-<span class="fc" id="L17">    }</span>
-
-<span class="fc" id="L19">    Feline feline = new Feline();</span>
+<span class="fc" id="L18">        this.feline = feline; // Сохраняем переданный объект</span>
+<span class="fc" id="L19">    }</span>
 
     public int getKittens() {
-<span class="fc" id="L22">        return feline.getKittens();</span>
+<span class="fc" id="L22">        return feline.getKittens(); // Теперь используем переданный экземпляр Feline</span>
     }
 
     public boolean doesHaveMane() {
@@ -27,7 +27,7 @@ public class Lion {
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="fc" id="L30">        return feline.getFood(&quot;Хищник&quot;);</span>
+<span class="fc" id="L30">        return feline.getFood(&quot;Хищник&quot;); // Используем переданный Feline</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
